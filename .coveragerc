@@ -1,0 +1,6 @@
+[report]
+include =
+    src/lzv/*
+omit =
+    */test*
+    */upgrades/*
