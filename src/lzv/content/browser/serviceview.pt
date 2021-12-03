@@ -1,0 +1,109 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="example.conference">
+
+
+<body>
+
+<head>
+    <metal:block fill-slot="style_slot">
+        <link rel="stylesheet" type="text/css"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++resource++lzv.content/lzvcontent.css"
+            />
+    </metal:block>
+</head>
+   
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main"
+        tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+        <h1 class="documentFirstHeading" tal:content="context/title" />
+
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+        <p class="documentDescription" tal:content="context/description" />
+
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+
+        <h2>Servicebeschreibung</h2>
+
+        <table class="listing description">
+            <tr class="serviceid">
+                <th>Service-ID</th>
+                <td tal:content="context/serviceid"></td>
+            </tr>
+            <tr class="servicename">
+                <th>Servicebezeichnung</th>
+                <td tal:content="context/servicename"></td>
+            </tr>
+            <tr class="details">
+                <th>Detailbeschreibung</th>
+                <td tal:content="structure context/details/output"></td>
+            </tr>
+            <tr tal:condition="context/subject" class="subjects">
+                <th>Stichworte</th>
+                <td>
+                    <ul>
+                        <li tal:repeat="item context/subject">
+                            <tal:content tal:replace="item" />
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr tal:condition="context/servicefamily" class="servicefamily">
+                <th>Servicefamilie</th>
+                <td tal:content="context/servicefamily"></td>
+            </tr>
+            <tr tal:condition="context/servicestatus" class="servicestatus">
+                <th>Servicestatus</th>
+                <td>
+                    <span tal:attributes="class context/servicestatus" 
+                          tal:content="python: view.get_servicestatus_names()[context.servicestatus]">Status</span>
+                </td>
+            </tr>
+        </table>
+
+        <h2>Serviceumfang und Optionen</h2>
+
+        <table class="listing options">
+            <tr class="basefunctions">
+                <th>Basisfunktionen</th>
+                <td>
+                    <ul>
+                        <li tal:repeat="basefunction context/basefunctions">
+                            <tal:content tal:replace="basefunction" />
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <h2>Nutzungsvoraussetzungen</h2>
+
+        <table class="listing terms">
+            <tr class="basefunctions">
+                <th>Personal</th>
+                <td>
+                    <ul>
+                        <li tal:repeat="person context/staff">
+                            <tal:content tal:replace="person" />
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <div tal:replace="structure provider:plone.belowcontentbody" />
+
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>

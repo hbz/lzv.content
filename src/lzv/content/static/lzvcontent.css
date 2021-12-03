@@ -1,0 +1,4 @@
+.servicestatus span.productive {color: green}
+.servicestatus span.planning {color: yellow}
+.servicestatus span.testing {color: orange}
+.servicestatus span.unavailable {color: red}

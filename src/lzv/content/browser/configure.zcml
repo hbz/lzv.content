@@ -11,6 +11,14 @@
       layer="lzv.content.interfaces.ILzvContentLayer"
       />
 
+  <browser:page
+      name="view"
+      for="lzv.content.service.IService"
+      class="lzv.content.service.ServiceView"
+      template="serviceview.pt"
+      permission="zope2.View"
+      />
+
   <!-- Publish static files -->
   <plone:static
       name="lzv.content"
