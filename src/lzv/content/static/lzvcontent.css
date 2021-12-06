@@ -2,3 +2,18 @@
 .servicestatus span.planning {color: yellow}
 .servicestatus span.testing {color: orange}
 .servicestatus span.unavailable {color: red}
+
+.subjects ul {
+  list-style: none;
+  padding: 0;
+  display: inline;
+}
+.subjects ul li {
+  display: inline-block;
+}
+.subjects li::after {
+  content: ", ";
+}
+.subjects li:last-child::after {
+  content: "";
+}

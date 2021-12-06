@@ -37,7 +37,7 @@
         <table class="listing description">
             <tr class="serviceid">
                 <th>Service-ID</th>
-                <td tal:content="context/serviceid"></td>
+                <td tal:content="python:'{:03}'.format(context.serviceid)"></td>
             </tr>
             <tr class="servicename">
                 <th>Servicebezeichnung</th>
@@ -78,8 +78,39 @@
                 <td>
                     <ul>
                         <li tal:repeat="basefunction context/basefunctions">
-                            <tal:content tal:replace="basefunction" />
-                        </li>
+                            <span tal:replace="python: view.get_basefunctions_names()[basefunction]">Basisfunktions</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr tal:condition="context/extrafunctions" class="extrafunctions">
+                <th>Zusatzfunktionen</th>
+                <td>
+                    <ul>
+                        <li tal:repeat="extrafunction context/extrafunctions">
+                            <span tal:replace="python: view.get_extrafunctions_names()[extrafunction]">Zusatzfunktion</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr class="ingests">
+                <th>Einlieferung</th>
+                <td>
+                    <ul>
+                        <li tal:repeat="ingest context/ingests">
+                            <span tal:replace="python: view.get_ingests_names()[ingest]">Methode</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr class="serviceoptions">
+                <th>Service-Optionen</th>
+                <td tal:content="structure context/serviceoptions/output"></td>
+            </tr>
+            
+            <tr class="storageoptions">
+                <th>Speicher-Optionen</th>
+                <td>
+                    <ul>
+                        <li tal:repeat="storage context/storageoptions">
+                            <span tal:replace="python: view.get_storages_names()[storage]">Speicher</span></li>
                     </ul>
                 </td>
             </tr>
@@ -97,6 +128,18 @@
                         </li>
                     </ul>
                 </td>
+            </tr>
+            <tr class="sourcesystem">
+                <th>Quellsystem</th>
+                <td></td>
+            </tr>
+            <tr class="datarequirements">
+                <th>Datenanforderung</th>
+                <td></td>
+            </tr>
+            <tr class="terms">
+                <th>Nutzungsregelungen</th>
+                <td tal:content="structure context/terms/output"></td>
             </tr>
         </table>
 
