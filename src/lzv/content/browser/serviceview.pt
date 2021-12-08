@@ -36,19 +36,19 @@
 
         <table class="listing description">
             <tr class="serviceid">
-                <th>Service-ID</th>
+                <th scope="row">Service-ID</th>
                 <td tal:content="python:'{:03}'.format(context.serviceid)"></td>
             </tr>
             <tr class="servicename">
-                <th>Servicebezeichnung</th>
+                <th  scope="row">Servicebezeichnung</th>
                 <td tal:content="context/servicename"></td>
             </tr>
             <tr class="details">
-                <th>Detailbeschreibung</th>
+                <th  scope="row">Detailbeschreibung</th>
                 <td tal:content="structure context/details/output"></td>
             </tr>
             <tr tal:condition="context/subject" class="subjects">
-                <th>Stichworte</th>
+                <th  scope="row">Stichworte</th>
                 <td>
                     <ul>
                         <li tal:repeat="item context/subject">
@@ -58,11 +58,11 @@
                 </td>
             </tr>
             <tr tal:condition="context/servicefamily" class="servicefamily">
-                <th>Servicefamilie</th>
+                <th  scope="row">Servicefamilie</th>
                 <td tal:content="context/servicefamily"></td>
             </tr>
             <tr tal:condition="context/servicestatus" class="servicestatus">
-                <th>Servicestatus</th>
+                <th  scope="row">Servicestatus</th>
                 <td>
                     <span tal:attributes="class context/servicestatus" 
                           tal:content="python: view.get_servicestatus_names()[context.servicestatus]">Status</span>
@@ -74,7 +74,7 @@
 
         <table class="listing options">
             <tr class="basefunctions">
-                <th>Basisfunktionen</th>
+                <th  scope="row">Basisfunktionen</th>
                 <td>
                     <ul>
                         <li tal:repeat="basefunction context/basefunctions">
@@ -83,7 +83,7 @@
                 </td>
             </tr>
             <tr tal:condition="context/extrafunctions" class="extrafunctions">
-                <th>Zusatzfunktionen</th>
+                <th  scope="row">Zusatzfunktionen</th>
                 <td>
                     <ul>
                         <li tal:repeat="extrafunction context/extrafunctions">
@@ -92,7 +92,7 @@
                 </td>
             </tr>
             <tr class="ingests">
-                <th>Einlieferung</th>
+                <th  scope="row">Einlieferung</th>
                 <td>
                     <ul>
                         <li tal:repeat="ingest context/ingests">
@@ -101,12 +101,12 @@
                 </td>
             </tr>
             <tr class="serviceoptions">
-                <th>Service-Optionen</th>
+                <th  scope="row">Service-Optionen</th>
                 <td tal:content="structure context/serviceoptions/output"></td>
             </tr>
             
             <tr class="storageoptions">
-                <th>Speicher-Optionen</th>
+                <th  scope="row">Speicher-Optionen</th>
                 <td>
                     <ul>
                         <li tal:repeat="storage context/storageoptions">
@@ -120,7 +120,7 @@
 
         <table class="listing terms">
             <tr class="basefunctions">
-                <th>Personal</th>
+                <th  scope="row">Personal</th>
                 <td>
                     <ul>
                         <li tal:repeat="person context/staff">
@@ -130,15 +130,15 @@
                 </td>
             </tr>
             <tr class="sourcesystem">
-                <th>Quellsystem</th>
+                <th  scope="row">Quellsystem</th>
                 <td></td>
             </tr>
             <tr class="datarequirements">
-                <th>Datenanforderung</th>
+                <th  scope="row">Datenanforderung</th>
                 <td></td>
             </tr>
             <tr class="terms">
-                <th>Nutzungsregelungen</th>
+                <th  scope="row">Nutzungsregelungen</th>
                 <td tal:content="structure context/terms/output"></td>
             </tr>
         </table>
