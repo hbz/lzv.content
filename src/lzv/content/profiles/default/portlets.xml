@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<portlets>
+    <portlet
+       addview="lzv.content.LZVContactPortlet"
+       title="LZV Contacts"
+       description="A portlet which displays a contact information."
+       />
+</portlets>

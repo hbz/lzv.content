@@ -1,0 +1,13 @@
+<dl class="portlet portletLzvContact"
+    i18n:domain="hbz.content">
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+            Kontakt
+        <span class="portletTopRight"></span>
+    </dt>
+    <dd class="portletItem odd">
+        <strong class="name"><abbr title="Doktor">Dr.</abbr> Philip Gross</strong><br />
+        <a class="email" href="mailto:philip.gross@hbz-nrw.de">philip.gross@hbz-nrw.de</a><br />
+        <a class="phone"  href="tel:+4922140075245">+49 221 40075245</a>
+    </dd>
+</dl>

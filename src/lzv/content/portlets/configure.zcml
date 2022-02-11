@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="lzv.content">
+    
+    <include package="plone.app.portlets" />
+    
+    <plone:portlet
+        name="lzv.content.LZVContactPortlet"
+        interface=".lzv_contact.ILZVContactPortlet"
+        assignment=".lzv_contact.Assignment"
+        renderer=".lzv_contact.Renderer"
+        addview=".lzv_contact.AddForm"
+        />
+
+</configure>
