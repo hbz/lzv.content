@@ -13,4 +13,12 @@
         addview=".lzv_contact.AddForm"
         />
 
+    <plone:portlet
+        name="lzv.content.LZVFurtherInformationPortlet"
+        interface=".further_information.ILZVFurtherInformationPortlet"
+        assignment=".further_information.Assignment"
+        renderer=".further_information.Renderer"
+        addview=".further_information.AddForm"
+        />
+
 </configure>

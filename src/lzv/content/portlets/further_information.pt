@@ -1,0 +1,22 @@
+<dl class="portlet portletFurtherInformation"
+    i18n:domain="hbz.content"
+    tal:define="portal_state context/@@plone_portal_state;
+                portal_url portal_state/portal_url">
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+            Weitere Informationen
+        <span class="portletTopRight"></span>
+    </dt>
+    <dd class="portletItem odd">
+        <a href="#">Technische Spezifikation</a>
+    </dd>
+    <dd class="portletItem even">
+        <a href="#">Prozessbeschreibung</a>
+    </dd>
+    <dd class="portletItem odd">
+        <a href="#">Workflow</a>
+    </dd>
+    <dd class="portletItem even">
+        <a href="https://www.hbz-nrw.de/produkte/langzeitverfuegbarkeit/langzeitverfuegbarkeit-fuer-hochschulen/hbz_NDSA_LevelsPreservation.pdf">Levels of Preservation</a>
+    </dd>
+</dl>
