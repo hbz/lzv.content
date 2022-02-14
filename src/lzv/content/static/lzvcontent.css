@@ -17,3 +17,10 @@
 .subjects li:last-child::after {
   content: "";
 }
+
+/* portlets */
+
+.portletLzvContact .portrait {
+  display: block;  
+  border-radius: 50%;
+}

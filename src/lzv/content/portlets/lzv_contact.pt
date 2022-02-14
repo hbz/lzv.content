@@ -1,11 +1,18 @@
 <dl class="portlet portletLzvContact"
-    i18n:domain="hbz.content">
+    i18n:domain="hbz.content"
+    tal:define="portal_state context/@@plone_portal_state;
+                portal_url portal_state/portal_url">
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
             Ansprechpartner
         <span class="portletTopRight"></span>
     </dt>
     <dd class="portletItem odd">
+        <img tal:attributes="src string:$portal_url/++resource++lzv.content/owl.png"
+             class="portrait"
+             width="120px"
+             height="120px"
+             src="" />
         <strong class="name"><abbr title="Doktor">Dr.</abbr> Philip Gross</strong><br />
         <a class="email" href="mailto:philip.gross@hbz-nrw.de">philip.gross@hbz-nrw.de</a><br />
         <a class="phone"  href="tel:+4922140075245">+49 221 40075245</a>
