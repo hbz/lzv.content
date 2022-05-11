@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.0a4 (2022-05-11)
+------------------
+
+- Teaserbild für Service, damit es in Album/Übersicht erscheint
+- Links im "Weitere informationen" portlet werden aus contenttype übernommen
+
+
 1.0a3 (2022-02-14)
 ------------------
 
