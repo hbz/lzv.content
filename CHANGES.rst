@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0a4 (2022-05-11)
+1.0a5 (2022-05-11)
 ------------------
 
 - Teaserbild für Service, damit es in Album/Übersicht erscheint
