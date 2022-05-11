@@ -7,16 +7,24 @@
             Weitere Informationen
         <span class="portletTopRight"></span>
     </dt>
-    <dd class="portletItem odd">
-        <a href="#">Technische Spezifikation</a>
+    <dd class="portletItem odd"
+        tal:condition="context/specs">
+        <a href="#"
+           tal:attributes="href context/specs">Technische Spezifikation</a>
     </dd>
-    <dd class="portletItem even">
-        <a href="#">Prozessbeschreibung</a>
+    <dd class="portletItem even"
+        tal:condition="context/process">
+        <a href="#"
+           tal:attributes="href context/process">Prozessbeschreibung</a>
     </dd>
-    <dd class="portletItem odd">
-        <a href="#">Workflow</a>
+    <dd class="portletItem odd"
+        tal:condition="context/workflow">
+        <a href="#"
+           tal:attributes="href context/workflow">Workflow</a>
     </dd>
-    <dd class="portletItem even">
-        <a href="https://www.hbz-nrw.de/produkte/langzeitverfuegbarkeit/langzeitverfuegbarkeit-fuer-hochschulen/hbz_NDSA_LevelsPreservation.pdf">Levels of Preservation</a>
+    <dd class="portletItem even"
+        tal:condition="context/lop">
+        <a href="#"
+           tal:attributes="href context/lop">Levels of Preservation</a>
     </dd>
 </dl>

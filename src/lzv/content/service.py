@@ -125,19 +125,23 @@ class IService(model.Schema):
     )
 
     specs = schema.URI(
-        title=_(u"Technische Spezifikation")        
+        title=_(u"Technische Spezifikation"),
+        required=False
     )
 
     process = schema.URI(
-        title=_(u"Prozessbeschreibung")        
+        title=_(u"Prozessbeschreibung"),
+        required=False
     )
 
     workflow = schema.URI(
-        title=_(u"Workflow")
+        title=_(u"Workflow"),
+        required=False
     )
 
     lop = schema.URI(
-        title=_(u"Levels of Preservation")        
+        title=_(u"Levels of Preservation"),
+        required=False
     )
 
 
