@@ -4,5 +4,9 @@
     i18n:domain="lzv.content">
 
 <!-- -*- extra stuff goes here -*- -->
-
+  <record name="plone.default_page_types">
+    <value purge="False">
+      <element>lzv.service</element>
+    </value>
+  </record>
 </registry>
