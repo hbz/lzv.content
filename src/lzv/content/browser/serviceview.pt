@@ -44,7 +44,7 @@
                 <td tal:content="context/servicename"></td>
             </tr>
             <tr class="details">
-                <th  scope="row">Detailbeschreibung</th>
+                <th  scope="row">Beschreibung</th>
                 <td tal:content="structure context/details/output"></td>
             </tr>
             <tr tal:condition="context/subject" class="subjects">
@@ -73,6 +73,17 @@
         <h2>Serviceumfang und Optionen</h2>
 
         <table class="listing options">
+            <tr class="functions">
+                <th  scope="row">Funktionen</th>
+                <td>
+                    <ul>
+                        <li tal:repeat="function context/functions">
+                            <span tal:replace="python: view.get_functions_names()[function]">Funktion</span></li>
+                    </ul>
+                </td>
+            </tr>
+
+            <!--
             <tr class="basefunctions">
                 <th  scope="row">Basisfunktionen</th>
                 <td>
@@ -91,6 +102,7 @@
                     </ul>
                 </td>
             </tr>
+            -->
             <tr class="ingests">
                 <th  scope="row">Einlieferung</th>
                 <td>
@@ -101,12 +113,11 @@
                 </td>
             </tr>
             <tr class="serviceoptions">
-                <th  scope="row">Service-Optionen</th>
+                <th  scope="row">Nutzungsoptionen</th>
                 <td tal:content="structure context/serviceoptions/output"></td>
             </tr>
-            
             <tr class="storageoptions">
-                <th  scope="row">Speicher-Optionen</th>
+                <th  scope="row">Speicherung</th>
                 <td>
                     <ul>
                         <li tal:repeat="storage context/storageoptions">
@@ -131,11 +142,11 @@
             </tr>
             <tr class="sourcesystem">
                 <th  scope="row">Quellsystem</th>
-                <td></td>
+                <td tal:content="structure context/sourcesystem/output"></td>
             </tr>
             <tr class="datarequirements">
                 <th  scope="row">Datenanforderung</th>
-                <td></td>
+                <td tal:content="structure context/datarequirements/output"></td>
             </tr>
             <tr class="terms">
                 <th  scope="row">Nutzungsregelungen</th>
