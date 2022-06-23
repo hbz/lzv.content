@@ -82,27 +82,6 @@
                     </ul>
                 </td>
             </tr>
-
-            <!--
-            <tr class="basefunctions">
-                <th  scope="row">Basisfunktionen</th>
-                <td>
-                    <ul>
-                        <li tal:repeat="basefunction context/basefunctions">
-                            <span tal:replace="python: view.get_basefunctions_names()[basefunction]">Basisfunktions</span></li>
-                    </ul>
-                </td>
-            </tr>
-            <tr tal:condition="context/extrafunctions" class="extrafunctions">
-                <th  scope="row">Zusatzfunktionen</th>
-                <td>
-                    <ul>
-                        <li tal:repeat="extrafunction context/extrafunctions">
-                            <span tal:replace="python: view.get_extrafunctions_names()[extrafunction]">Zusatzfunktion</span></li>
-                    </ul>
-                </td>
-            </tr>
-            -->
             <tr class="ingests">
                 <th  scope="row">Einlieferung</th>
                 <td>
