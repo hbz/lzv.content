@@ -1,12 +1,13 @@
 Changelog
 =========
 
-1.0 (2022-06-23)
+1.0.1 (2022-06-23)
 ------------------
 
 - Added missing fields (sourcesystem, datarequirements)
 - merged base- and extrafunctions
 - some minor renamings
+
 
 1.0a6 (2022-05-17)
 ------------------
