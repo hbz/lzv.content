@@ -10,7 +10,7 @@ FUNCTIONS = (
     ("function3", u"Vorkonfigurierte Materialflows"),
     ("function4", u"Individuelles Preservation Planning"),
     ("function5", u"Reporting"),
-    ("function6", u"Zugriff auf Rosetta-Webservice: REST SOAP SRU"),
+    ("function6", u"Zugriff auf Rosetta-Webservices: REST SOAP SRU"),
     ("function7", u"Mandantenfähigkeit"),
     ("function8", u"Monitoring"),
     ("function9", u"Collection Management"),
@@ -37,8 +37,9 @@ INGESTS = (
     ("ingest2", u"Einlieferung über Submission-Application"),
     ("ingest3", u"Einlieferung über REST"),
     ("ingest4", u"Einlieferung über CSV"),
-    ("ingest6", u"Einlieferung über Bagit"),
     ("ingest5", u"Manuelle Einlieferung nach Vereinbarung"),
+    ("ingest6", u"Einlieferung über BagIt"),
+    ("ingest7", u"Einlieferung über METS"),
 )
 STORAGES = (
     ("storage1", u"Zentrale Speicherung"),
