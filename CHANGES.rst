@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.0.2 (2022-07-05)
+------------------
+
+- fixed a few typos, added METS to the list of import formats
+
 1.0.1 (2022-06-23)
 ------------------
 
