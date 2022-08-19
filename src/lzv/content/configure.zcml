@@ -14,9 +14,10 @@
   -->
   <!--<includeDependencies package="." />-->
 
+  <!-- <include package=".views" /> -->
   <include package=".browser" />
   <include package=".portlets" />
-
+  
   <include file="permissions.zcml" />
 
   <browser:resourceDirectory
@@ -48,5 +49,14 @@
       />
 
   <!-- -*- extra stuff goes here -*- -->
+
+    <browser:page
+      name="contacts"
+      for="plone.app.contenttypes.interfaces.IFolder"
+      class=".views.contacts.ContactsView"
+      permission="zope2.View"
+      />
+
+
 
 </configure>

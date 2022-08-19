@@ -7,14 +7,24 @@
             Ansprechpartner
         <span class="portletTopRight"></span>
     </dt>
-    <dd class="portletItem odd">
-        <img tal:attributes="src string:$portal_url/++resource++lzv.content/owl.png"
+    <dd class="portletItem odd"
+        tal:define="contact python: view.contact_data();
+                    academictitles python:view.get_academictitles()">
+        <img tal:attributes="src python: contact['image_url']"
+             tal:condition="python:contact['image_url']"
              class="portrait"
              width="120px"
              height="120px"
              src="" />
-        <strong class="name"><abbr title="Doktor">Dr.</abbr> Philip Gross</strong><br />
-        <a class="email" href="mailto:philip.gross@hbz-nrw.de">philip.gross@hbz-nrw.de</a><br />
-        <a class="phone"  href="tel:+4922140075245">+49 221 40075245</a>
+                
+        <strong class="name">
+            <abbr tal:condition="contact/academictitle" 
+                  tal:attributes="title python:academictitles[contact['academictitle']]">
+                  ${python: contact['academictitle']}
+            </abbr>
+                  ${python: contact['title']}
+        </strong><br />
+        <a class="email" href="mailto:${python: contact['email']}">${python: contact['email']}</a><br />
+        <a class="phone"  href="tel:${python: contact['phone']}">${python: contact['phone']}</a>
     </dd>
 </dl>

@@ -24,3 +24,13 @@
   display: block;
   border-radius: 50%;
 }
+
+/* contacts */
+ol.contacts li {
+  list-style: none;
+  clear: both;
+}
+
+ol.contacts img {
+  float:left;
+}

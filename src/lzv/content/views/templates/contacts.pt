@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+     metal:use-macro="context/main_template/macros/master">
+<body>
+
+<head>
+    <metal:block fill-slot="style_slot">
+        <link rel="stylesheet" type="text/css"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++resource++lzv.content/lzvcontent.css"
+            />
+    </metal:block>
+</head>
+
+<metal:content-core fill-slot="main">
+  <metal:content-core define-macro="main">
+    <div class="title-wrapper">
+      <h1>${python: context.title}</h1>
+      <p class="folder-description">${python: context.description}</p>
+    </div>
+
+    <div tal:define="academictitles python:view.get_academictitles()">
+      <ol class="contacts">
+      <tal:block tal:repeat="item python:view.get_items()">
+        <li>
+            <img  tal:attributes="src python: item['image_url']"
+                  tal:condition="python:item['image_url']">
+            <h2>
+                  <abbr tal:condition="item/academictitle" 
+                        tal:attributes="title python:academictitles[item['academictitle']]">
+                      ${python: item['academictitle']}
+                  </abbr>
+                  ${python: item['title']}
+            </h2>
+            <p>
+              ${python: item['job']}<br />
+              <a href="#" tal:attributes="href string:mailto:${item/email}">${python: item['email']}</a><br />
+              <a href="#" tal:attributes="href string:tel:${item/phone}">${python: item['phone']}</a>
+            </p>
+         </li>
+      </tal:block>
+      </ol>
+    </div>
+
+  </metal:content-core>
+</metal:content-core>
+</body>
+</html>

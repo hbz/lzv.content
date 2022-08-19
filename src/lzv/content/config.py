@@ -1,3 +1,9 @@
+ACADEMICTITLES = (
+    ("Dr.", u"Doktor"),
+    ("Dr. Dr.", u"Doktor Doktor"),
+    ("Prof. Dr.", u"Professor Doktor"),
+    ("Dipl. Ing.", u"Diplom Ingenieur"),
+)
 SERVICESTATUS = (
     ("productive", u"In Produktion"),
     ("testing", u"Im Testbetrieb"),

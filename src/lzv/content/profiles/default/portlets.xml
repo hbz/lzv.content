@@ -5,7 +5,7 @@
        title="LZV Contacts"
        description="A portlet which displays a contact information."
        />
-       <portlet
+    <portlet
        addview="lzv.content.LZVFurtherInformationPortlet"
        title="LZV Further Information"
        description="A portlet which displays links to further information."
