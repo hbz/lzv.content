@@ -31,8 +31,17 @@ class ContactsView(BrowserView):
         return self.template(self)
 
     def get_academictitles(self):
+        """Return a dict of acad. titles with abbreviations as keys."""
+
         return {x[0]:x[1] for x in ACADEMICTITLES}
         
+    def _chunkify(self, items, chunk_size=2):
+        """Return a list as chunks of given size."""
+
+        chunked_list = list()
+        for i in range(0, len(items), chunk_size):
+            chunked_list.append(items[i:i + chunk_size])
+        return chunked_list
 
     def get_items(self) -> List[TItem]:
         query = {
@@ -55,8 +64,8 @@ class ContactsView(BrowserView):
                 'email': obj.email,
                 'image_url': self.get_image_url(obj)
             })
-
-        return items
+        
+        return self._chunkify(items, 2)
 
     @staticmethod
     def get_image_url(obj) -> Optional[str]:

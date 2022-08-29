@@ -22,15 +22,17 @@
 
 .portletLzvContact .portrait {
   display: block;
-  border-radius: 50%;
+  border-radius: 15px;
 }
 
 /* contacts */
-ol.contacts li {
-  list-style: none;
-  clear: both;
+.contact  {
+  padding: 1em;
+  clear: none;
 }
 
-ol.contacts img {
+.contact img {
+  margin-right: 1em;
+  border-radius: 10px;
   float:left;
 }

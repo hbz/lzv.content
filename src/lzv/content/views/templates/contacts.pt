@@ -20,26 +20,34 @@
     </div>
 
     <div tal:define="academictitles python:view.get_academictitles()">
-      <ol class="contacts">
-      <tal:block tal:repeat="item python:view.get_items()">
-        <li>
-            <img  tal:attributes="src python: item['image_url']"
-                  tal:condition="python:item['image_url']">
-            <h2>
-                  <abbr tal:condition="item/academictitle" 
-                        tal:attributes="title python:academictitles[item['academictitle']]">
-                      ${python: item['academictitle']}
+      
+      <tal:block tal:repeat="row python:view.get_items()">
+        <div class="row contacts">
+          <tal:block tal:repeat="col python:row">
+            <div class="col-xs-12 col-sm-12 col-md-6 contact">
+            <img  tal:attributes="src python: col['image_url'];
+                                  alt string:Foto von ${col/title}"
+                  tal:condition="python:col['image_url']"
+                  width="150px">
+            <strong>
+                  <abbr tal:condition="col/academictitle" 
+                        tal:attributes="title python:academictitles[col['academictitle']]">
+                      ${python: col['academictitle']}
                   </abbr>
-                  ${python: item['title']}
-            </h2>
+                  ${python: col['title']}
+            </strong>
             <p>
-              ${python: item['job']}<br />
-              <a href="#" tal:attributes="href string:mailto:${item/email}">${python: item['email']}</a><br />
-              <a href="#" tal:attributes="href string:tel:${item/phone}">${python: item['phone']}</a>
+              ${python: col['job']}<br />
+              <a href="#" tal:attributes="href string:mailto:${col/email}">${python: col['email']}</a><br />
+              <a href="#" tal:attributes="href string:tel:${col/phone}">${python: col['phone']}</a>
             </p>
-         </li>
+            </div>
+          </tal:block>
+        </div>
+        
+        
       </tal:block>
-      </ol>
+      
     </div>
 
   </metal:content-core>
