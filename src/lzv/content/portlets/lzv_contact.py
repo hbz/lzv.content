@@ -52,10 +52,11 @@ class Renderer(base.Renderer):
         return {x[0]:x[1] for x in ACADEMICTITLES}
 
 
-    def contact_data(self) -> List[TItem]:
+    def contact_data(self, contact) -> List[TItem]:
         query = {
             "portal_type": ['lzv.contact'],
-            "UID": "847e818adf7a49ffb4dd8eb6c77b364b"
+            "UID": contact
+            #"UID": "847e818adf7a49ffb4dd8eb6c77b364b"
         }
 
         items = list()

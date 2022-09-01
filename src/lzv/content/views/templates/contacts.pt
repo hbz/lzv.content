@@ -29,7 +29,7 @@
                                   alt string:Foto von ${col/title}"
                   tal:condition="python:col['image_url']"
                   width="150px">
-            <strong>
+            <strong tal:attributes="id python: col['UID']">
                   <abbr tal:condition="col/academictitle" 
                         tal:attributes="title python:academictitles[col['academictitle']]">
                       ${python: col['academictitle']}

@@ -4,6 +4,7 @@ from plone.supermodel.directives import fieldset
 from plone.app.textfield import RichText
 from plone.indexer import indexer
 from plone.supermodel import model
+from plone import api
 from zope import schema
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from Products.Five import BrowserView
@@ -27,9 +28,22 @@ choice_ingests = SimpleVocabulary(items)
 items = [SimpleTerm(value=key, title=value) for (key, value) in STORAGES]
 choice_storages = SimpleVocabulary(items)
 
+contacts = (
+    ("847e818adf7a49ffb4dd8eb6c77b364b", "Philip"),
+    ("a68f0fb2bdfa48299fce6318931398f1", "Carmen")
+)
+
+items = [SimpleTerm(value=key, title=value) for (key, value) in contacts]
+choice_contacts = SimpleVocabulary(items)
+
+
 
 class IService(model.Schema):
     """An lzv service"""
+
+    # brains = api.content.find(portal_type='lzv.contact')
+    #    contacts.append("adasdf124", brain.Title)
+      
 
     # Servicebeschreibung
 
@@ -128,7 +142,7 @@ class IService(model.Schema):
 
     fieldset('portlet',
         label=u'Portlet',
-        fields=['specs', 'process', 'workflow', 'lop']
+        fields=['specs', 'process', 'workflow', 'lop', 'contact']
     )
 
     specs = schema.URI(
@@ -151,6 +165,12 @@ class IService(model.Schema):
         required=False
     )
 
+    contact = schema.TextLine(
+        title=_(u"Kontakt"),
+        description=_("Kontakt"),
+        required=False,
+    )
+
     # basefunction and extrafuctions habe merged into functions
     # we have to keep in order not to break existing content of this type
     basefunctions = schema.List(
@@ -168,6 +188,7 @@ class IService(model.Schema):
         required=False,
         readonly=True
     )
+
 
 
 @indexer(IService)
@@ -195,5 +216,3 @@ class ServiceView(BrowserView):
     
     def get_storages_names(self):
         return  {k:v for k,v in STORAGES}
-
-

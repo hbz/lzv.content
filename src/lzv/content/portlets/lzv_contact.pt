@@ -1,15 +1,17 @@
 <dl class="portlet portletLzvContact"
     i18n:domain="hbz.content"
     tal:define="portal_state context/@@plone_portal_state;
-                portal_url portal_state/portal_url">
+                portal_url portal_state/portal_url;
+                contact python: view.contact_data(context.contact);
+                academictitles python:view.get_academictitles()">
+
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
             Ansprechpartner
         <span class="portletTopRight"></span>
     </dt>
-    <dd class="portletItem odd"
-        tal:define="contact python: view.contact_data();
-                    academictitles python:view.get_academictitles()">
+    
+    <dd class="portletItem odd">
         <img tal:attributes="src python: contact['image_url']"
              tal:condition="python:contact['image_url']"
              class="portrait"

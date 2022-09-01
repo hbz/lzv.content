@@ -17,6 +17,7 @@ from lzv.content.config import ACADEMICTITLES
 class TItem(TypedDict):
     title: str
     url: str
+    UID: str
     description: str
     academictitle: str
     email: str
@@ -57,6 +58,7 @@ class ContactsView(BrowserView):
             items.append({
                 'title': brain.Title,
                 'url': brain.getURL(),
+                'UID': brain.UID,
                 'description': brain.Description,
                 'academictitle': obj.academictitle,
                 'job': obj.job,
