@@ -39,13 +39,14 @@ EXTRAFUNCTIONS = (
     ("extra4", u"Individuelles Rechtemanagement"),
 )
 INGESTS = (
-    ("ingest1", u"Einlieferung über OAI-PMH"),
+    ("ingest1", u"Metadatenbereitstellung via OAI-PHM"),
     ("ingest2", u"Einlieferung über Submission-Application"),
-    ("ingest3", u"Einlieferung über REST"),
-    ("ingest4", u"Einlieferung über CSV"),
+    ("ingest4", u"Einlieferung mittels CSV"),
     ("ingest5", u"Manuelle Einlieferung nach Vereinbarung"),
-    ("ingest6", u"Einlieferung über BagIt"),
-    ("ingest7", u"Einlieferung über METS"),
+    ("ingest6", u"Einlieferung als BagIt"),
+    ("ingest7", u"Einlieferung mittels METS"),
+    ("ingest8", u"Einlieferung mittels DC"),
+    ("ingest9", u"Datenbereitstellung über Einlieferungsserver des hbz"),
 )
 STORAGES = (
     ("storage1", u"Zentrale Speicherung"),
