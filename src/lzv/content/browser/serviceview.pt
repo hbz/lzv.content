@@ -31,7 +31,9 @@
         <p class="documentDescription" tal:content="context/description" />
 
         <div tal:replace="structure provider:plone.abovecontentbody" />
-
+        <div id="content">
+	<div id="content-core">
+        <div id="parent-fieldname-text">
         <h2>Servicebeschreibung</h2>
 
         <table class="listing description">
@@ -132,7 +134,9 @@
                 <td tal:content="structure context/terms/output"></td>
             </tr>
         </table>
-
+        </div>
+	</div>
+	</div>
         <div tal:replace="structure provider:plone.belowcontentbody" />
 
     </tal:main-macro>

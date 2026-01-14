@@ -8,8 +8,12 @@
   padding: 0;
   display: inline;
 }
+.subjects ul li::before {
+  content: none  !important;
+}
 .subjects ul li {
   display: inline-block;
+  margin-right: 0 !important; 
 }
 .subjects li::after {
   content: ", ";
