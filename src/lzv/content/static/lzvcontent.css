@@ -11,9 +11,6 @@
 .subjects ul li::before {
   content: none  !important;
 }
-table td ul li::before {
-  margin-left: -2em !important;
-}
 .subjects ul li {
   display: inline-block;
   margin-right: 0 !important; 
