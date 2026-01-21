@@ -12,15 +12,23 @@
     </metal:block>
 </head>
 
-<metal:content-core fill-slot="main">
-  <metal:content-core define-macro="main">
-    <div class="title-wrapper">
-      <h1>${python: context.title}</h1>
-      <p class="folder-description">${python: context.description}</p>
-    </div>
+<metal:main fill-slot="main">
+  <tal:main-macro metal:define-macro="main"
+      tal:define="academictitles python:view.get_academictitles()">
 
-    <div tal:define="academictitles python:view.get_academictitles()">
-      
+  <header>
+  <h1 class="documentFirstHeading" tal:content="context/title" />
+
+  <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+  <p class="documentDescription" tal:content="context/description" />
+  </header>
+  
+  <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+  <div tal:replace="structure provider:plone.abovecontentbody" />
+
+	  <div id="content-core">   
       <tal:block tal:repeat="row python:view.get_items()">
         <div class="row contacts">
           <tal:block tal:repeat="col python:row">
@@ -47,10 +55,11 @@
         
         
       </tal:block>
-      
-    </div>
+      </div>  
 
-  </metal:content-core>
-</metal:content-core>
+    <div tal:replace="structure provider:plone.belowcontentbody" />
+  </tal:main-macro>
+</metal:main>
+
 </body>
 </html>
