@@ -43,7 +43,7 @@ INGESTS = (
     ("ingest2", u"Einlieferung über Submission-Application"),
     ("ingest4", u"Einlieferung mittels CSV"),
     ("ingest5", u"Manuelle Einlieferung nach Vereinbarung"),
-    ("ingest6", u"Einlieferung als BagIt"),
+    ("ingest6", u"Einlieferung mittels BagIt"),
     ("ingest7", u"Einlieferung mittels METS"),
     ("ingest8", u"Einlieferung mittels DC"),
     ("ingest9", u"Datenbereitstellung über Einlieferungsserver des hbz"),
