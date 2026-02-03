@@ -12,7 +12,8 @@
     </dt>
     
     <dd class="portletItem odd">
-        <img tal:attributes="src python: contact['image_url']"
+        <img tal:attributes="src python: contact['image_url'];
+			     alt python: 'Foto von %s' % contact['title']"
              tal:condition="python:contact['image_url']"
              class="portrait"
              width="120px"
