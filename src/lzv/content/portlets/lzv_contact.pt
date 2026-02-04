@@ -29,9 +29,9 @@
         </strong><br />
         <a class="email" href="#"
            tal:attributes="href string:mailto:${contact/email};
-	                   title python: 'E-Mailadresse: %s' % contact['email']">${python: contact['email']}</a><br />
+	                   aria-label python: 'E-Mailadresse: %s' % contact['email']">${python: contact['email']}</a><br />
         <a class="phone"  href="#"
            tal:attributes="href python:'tel:' + contact['phone'].replace(' ','').replace('-','');
-	                   title python: 'Telefonnummer: %s' % contact['phone']">${python: contact['phone']}</a>
+	                   aria-label python: 'Telefonnummer: %s' % contact['phone']">${python: contact['phone']}</a>
     </dd>
 </dl>

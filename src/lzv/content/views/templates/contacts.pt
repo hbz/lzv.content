@@ -47,9 +47,9 @@
             <p>
               ${python: col['job']}<br />
               <a href="#" tal:attributes="href string:mailto:${col/email};
-		                          title python: 'E-Mailadresse: %s' % col['email'] ">${python: col['email']}</a><br />
+		                          aria-label python: 'E-Mailadresse: %s' % col['email'] ">${python: col['email']}</a><br />
               <a href="#" tal:attributes="href python:'tel:' + col['phone'].replace(' ','').replace('-','');
-		                          title python: 'Telefonnummer: %s' % col['phone']">${python: col['phone']}</a>
+		                          aria-label python: 'Telefonnummer: %s' % col['phone']">${python: col['phone']}</a>
             </p>
             </div>
           </tal:block>
